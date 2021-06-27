@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Adventure Log</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+		<!-- <link rel="stylesheet" href="main.css"> -->
+		<script src="main.js"></script>
+	</head>
+	<body>
+		<section class="section">
+			<div class="container">
+				<h1 class="title is-1">
+					Adventure Log
+				</h1>
+				<p class="subtitle">
+					Party:
+				</p>
+				<div class="columns">
+					<div class="column">
+						<h3 class="title is-3">
+							Previous Entries
+						</h3>
+						<div id="entries"></div>
+					</div>
+					<div class="column">
+						<h3 class="title is-3">
+							Add Log Entry
+						</h3>
+						<form action="" id="add_entry">
+							<div class="field">
+								<label for="" class="label">Name</label>
+								<div class="control">
+									<input type="text" class="input" placeholder="your name" id="name">
+								</div>
+							</div>
+							<div class="field">
+								<label for="email" class="label">Email</label>
+								<div class="control">
+									<input type="text" class="input" placeholder="your email" id="email">
+								</div>
+							</div>
+							<div class="field">
+								<label for="entry" class="label">Event</label>
+								<div class="control">
+									<textarea class="textarea" name="entry" id="entry" cols="30" rows="10" placeholder="add log entry"></textarea>
+								</div>
+							</div>
+							<div class="control">
+								<button class="button is-primary">Add your entry</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		<script id="entries-template" type="text/x-handlebars-template">
+			{{#each entries}}
+			<div class="box">
+				<article class="media">
+					<div class="media-left">
+						<figure class="image is-64x64">
+							<img src="{{icon}}" alt="No Image">
+						</figure>
+					</div>
+					<div class="media-content">
+						<div class="content">
+							<p>
+								<strong>{{name}}</strong><small>{{email}}</small>
+								<br>{{entry}}
+							</p>
+						</div>
+					</div>
+				</article>
+			</div>
+			{{/each}}
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="adventure_log.js"></script>
+	</body>
+</html>
